@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Module 17</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- checkbox -->
+
+<body>
+  <div class="container flex">
+
+    <div class="categories">
+      <h3>
+        Категории:
+      </h3>
+      <ul class="categories_list list_reset">
+        <li class="category">
+          <input type="checkbox" name="checkbox-1" id="checkbox-1" class="custom_checkbox">
+          <label for="checkbox-1">
+            Динозавры
+          </label>
+        </li>
+
+        <li class="category">
+          <input type="checkbox" name="checkbox-2" id="checkbox-2" class="custom_checkbox">
+          <label for="checkbox-2">
+            Медведи
+          </label>
+        </li>
+        <li class="category">
+          <input type="checkbox" name="checkbox-3" id="checkbox-3" class="custom_checkbox">
+          <label for="checkbox-3">
+            Косули
+          </label>
+        </li>
+
+        <li class="category">
+          <input type="checkbox" name="checkbox-4" id="checkbox-4" class="custom_checkbox">
+          <label for="checkbox-4">
+            Лисы
+          </label>
+        </li>
+
+        <li class="category">
+          <input type="checkbox" name="checkbox-5" id="checkbox-5" class="custom_checkbox">
+          <label for="checkbox-5">
+            Волки
+          </label>
+        </li>
+
+        <li class="category">
+          <input type="checkbox" name="checkbox-6" id="checkbox-6" class="custom_checkbox">
+          <label for="checkbox-6">
+            Олени и лоси
+          </label>
+        </li>
+      </ul>
+    </div>
+    <!-- select -->
+    <div name="select" class="material">
+      <select>
+        <option value="1">Материал</option>
+        <option value="2">Древесина</option>
+        <option value="3">Металл</option>
+        <option value="4">Камень</option>
+        <option value="5">Пластик</option>
+        <option value="6">Композитный</option>
+        <option value="7">Гипс</option>
+      </select>
+    </div>
+
+    <!-- map -->
+    <div class="my_map flex" id="myMap"">
+          </div>
+        </div>
+        <!-- scrol -->
+      <div class=" custom_scroll flex" data-simplebar>
+      Сложно сказать, почему многие известные личности представлены в&nbsp;исключительно положительном свете. Лишь
+      активно
+      развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями.
+      Мы&nbsp;вынуждены
+      отталкиваться от&nbsp;того, что высокотехнологичная концепция общественного уклада представляет собой
+      интересный
+      эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее:
+      непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины
+      в&nbsp;целом,
+      однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что
+      социально-экономическое развитие, а&nbsp;также свежий взгляд на&nbsp;привычные вещи&nbsp;&mdash; безусловно
+      открывает
+      новые горизонты для первоочередных требований.
+    </div>
+    <!-- forms -->
+    <div class="input_box">
+      <form action="#" id="form" class="form column">
+        <input type="text" class="form__input form-control" placeholder="Имя*" name="name" id="name" />
+
+        <input type="tel" class="form__input form-control" placeholder="Телефон*" data-vadate-field="tel"
+          data-vadate-rules="phone" name="tel" id="tel" />
+
+        <input type="email" class="form__input form-control" placeholder="E-mail*" name="email" id="email" />
+
+        <button class="btn btn-primary" id="submit-btn">
+          <p class="btn_text">Заказать</p>
+        </button>
+      </form>
+    </div>
+    <!-- tooltip -->
+    <div class="tooltip">
+      <div class="marker" tabindex="0"></div>
+      <div class="popup">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere accusamus eaque tempora? Aperiam similique
+        eveniet
+        earum explicabo corporis veniam fuga ea ipsam voluptas assumenda sed expedita, rem, minima eos vero?
+      </div>
+    </div>
+
+    <div class="button_tooltip">
+      <div class="button marker" id="myBtn" tabindex="0"></div>
+    </div>
+  </div>
+
+  <script src="js/inputmask.min.js"></script>
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+  <script>
+    const validate = new window.JustValidate('.form');
+  </script>
+
+  <!-- <script src="just-validate.min.js"></script> -->
+
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+  <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+  <script src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
+
+  <script src="js/choices.min.js"></script>
+
+  <script src="js/script.js"></script>
+
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript"></script>
+
+  <script type="text/javascript">
+    // Функция ymaps.ready() будет вызвана, когда
+    // загрузятся все компоненты API, а также когда будет готово DOM-дерево.
+    ymaps.ready(init);
+    function init() {
+      // Создание карты.
+      var myMap = new ymaps.Map("myMap", {
+        // Координаты центра карты.
+        // Порядок по умолчанию: «широта, долгота».
+        // Чтобы не определять координаты центра карты вручную,
+        // воспользуйтесь инструментом Определение координат.
+        center: [53.34, 83.77],
+        // Уровень масштабирования. Допустимые значения:
+        // от 0 (весь мир) до 19.
+        zoom: 9
+      });
+
+      // Создание геообъекта с типом точка (метка).
+      var myGeoObject = new ymaps.GeoObject({
+        geometry: {
+          type: "Point", // тип геометрии - точка
+          coordinates: [53.34, 83.77] // координаты точки
+        }
+      });
+
+      var myPlacemark = new ymaps.Placemark([53.30, 83.77], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: 'location.svg',
+        iconImageSize: [30, 42],
+        iconImageOffset: [-3, -42]
+      });
+
+      // Размещение геообъекта на карте.
+      myMap.geoObjects.add(myGeoObject);
+      myMap.geoObjects.add(myPlacemark);
+    }
+  </script>
+
+</body>
+
+</html>
